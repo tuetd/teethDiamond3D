@@ -1,4 +1,4 @@
-(function (React, ReactDOM$1, ReactDOM, button, THREE$1, fiber, drei, threeStdlib, toast$1, confirmdialog, postprocessing, ImageResizer$1, FileSaver) {
+(function (React$1, ReactDOM$1, ReactDOM, button, THREE$1, fiber, drei, threeStdlib, toast$1, confirmdialog, postprocessing, ImageResizer$1, FileSaver) {
   'use strict';
 
   function _interopNamespaceDefault(e) {
@@ -18,7 +18,7 @@
     return Object.freeze(n);
   }
 
-  var React__namespace = /*#__PURE__*/_interopNamespaceDefault(React);
+  var React__namespace = /*#__PURE__*/_interopNamespaceDefault(React$1);
   var THREE__namespace = /*#__PURE__*/_interopNamespaceDefault(THREE$1);
 
   function _arrayLikeToArray(r, a) {
@@ -272,7 +272,7 @@
     if (active === void 0) {
       active = true;
     }
-    React.useEffect(function () {
+    React$1.useEffect(function () {
       if (!active) return;
       var listener = function listener(event) {
         // check if key is an Escape
@@ -289,7 +289,7 @@
     if (active === void 0) {
       active = true;
     }
-    React.useEffect(function () {
+    React$1.useEffect(function () {
       if (!active) return;
       var listener = function listener() {
         handler();
@@ -305,7 +305,7 @@
     if (active === void 0) {
       active = true;
     }
-    React.useEffect(function () {
+    React$1.useEffect(function () {
       if (!active) return;
       var listener = function listener(event) {
         // Do nothing if clicking ref's element or descendent elements
@@ -334,7 +334,7 @@
     if (active === void 0) {
       active = true;
     }
-    React.useEffect(function () {
+    React$1.useEffect(function () {
       if (!active) return;
       var listener = function listener(event) {
         // check if key is an Tab
@@ -364,7 +364,7 @@
       };
     }, [contentRef, active]);
   };
-  var useIsomorphicLayoutEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
+  var useIsomorphicLayoutEffect = typeof window !== 'undefined' ? React$1.useLayoutEffect : React$1.useEffect;
   var Style = {
     popupContent: {
       tooltip: {
@@ -542,7 +542,7 @@
     }
     return PopupRoot;
   };
-  var Popup = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
+  var Popup = /*#__PURE__*/React$1.forwardRef(function (_ref, ref) {
     var _ref$trigger = _ref.trigger,
       trigger = _ref$trigger === void 0 ? null : _ref$trigger,
       _ref$onOpen = _ref.onOpen,
@@ -592,16 +592,16 @@
       _ref$keepTooltipInsid = _ref.keepTooltipInside,
       keepTooltipInside = _ref$keepTooltipInsid === void 0 ? false : _ref$keepTooltipInsid,
       children = _ref.children;
-    var _useState = React.useState(open || defaultOpen),
+    var _useState = React$1.useState(open || defaultOpen),
       isOpen = _useState[0],
       setIsOpen = _useState[1];
-    var triggerRef = React.useRef(null);
-    var contentRef = React.useRef(null);
-    var arrowRef = React.useRef(null);
-    var focusedElBeforeOpen = React.useRef(null);
-    var popupId = React.useRef("popup-" + ++popupIdCounter);
+    var triggerRef = React$1.useRef(null);
+    var contentRef = React$1.useRef(null);
+    var arrowRef = React$1.useRef(null);
+    var focusedElBeforeOpen = React$1.useRef(null);
+    var popupId = React$1.useRef("popup-" + ++popupIdCounter);
     var isModal = modal ? true : !trigger;
-    var timeOut = React.useRef(0);
+    var timeOut = React$1.useRef(0);
     useIsomorphicLayoutEffect(function () {
       if (isOpen) {
         focusedElBeforeOpen.current = document.activeElement;
@@ -617,7 +617,7 @@
       };
     }, [isOpen]); // for uncontrolled popup we need to sync isOpen with open prop
 
-    React.useEffect(function () {
+    React$1.useEffect(function () {
       if (typeof open === 'boolean') {
         if (open) openPopup();else closePopup();
       }
@@ -670,7 +670,7 @@
       var firstEl = Array.prototype.slice.call(focusableEls)[0];
       firstEl === null || firstEl === void 0 ? void 0 : firstEl.focus();
     };
-    React.useImperativeHandle(ref, function () {
+    React$1.useImperativeHandle(ref, function () {
       return {
         open: function open() {
           openPopup();
@@ -740,9 +740,9 @@
       }
       if (typeof trigger === 'function') {
         var comp = trigger(isOpen);
-        return !!trigger && /*#__PURE__*/React.cloneElement(comp, triggerProps);
+        return !!trigger && /*#__PURE__*/React$1.cloneElement(comp, triggerProps);
       }
-      return !!trigger && /*#__PURE__*/React.cloneElement(trigger, triggerProps);
+      return !!trigger && /*#__PURE__*/React$1.cloneElement(trigger, triggerProps);
     };
     var addWarperAction = function addWarperAction() {
       var popupContentStyle = isModal ? Style.popupContent.modal : Style.popupContent.tooltip;
@@ -765,14 +765,14 @@
       return childrenElementProps;
     };
     var renderContent = function renderContent() {
-      return /*#__PURE__*/React.createElement("div", Object.assign({}, addWarperAction(), {
+      return /*#__PURE__*/React$1.createElement("div", Object.assign({}, addWarperAction(), {
         key: "C",
         role: isModal ? 'dialog' : 'tooltip',
         id: popupId.current
-      }), arrow && !isModal && /*#__PURE__*/React.createElement("div", {
+      }), arrow && !isModal && /*#__PURE__*/React$1.createElement("div", {
         ref: arrowRef,
         style: Style.popupArrow
-      }, /*#__PURE__*/React.createElement("svg", {
+      }, /*#__PURE__*/React$1.createElement("svg", {
         "data-testid": "arrow",
         className: "popup-arrow " + (className !== '' ? className.split(' ').map(function (c) {
           return c + "-arrow";
@@ -781,14 +781,14 @@
         style: _extends({
           position: 'absolute'
         }, arrowStyle)
-      }, /*#__PURE__*/React.createElement("path", {
+      }, /*#__PURE__*/React$1.createElement("path", {
         d: "M16 0l16 16H0z",
         fill: "currentcolor"
       }))), children && typeof children === 'function' ? children(closePopup, isOpen) : children);
     };
     var overlay = !(on.indexOf('hover') >= 0);
     var ovStyle = isModal ? Style.overlay.modal : Style.overlay.tooltip;
-    var content = [overlay && /*#__PURE__*/React.createElement("div", {
+    var content = [overlay && /*#__PURE__*/React$1.createElement("div", {
       key: "O",
       "data-testid": "overlay",
       "data-popup": isModal ? 'modal' : 'tooltip',
@@ -801,7 +801,7 @@
       onClick: closeOnDocumentClick && nested ? closePopup : undefined,
       tabIndex: -1
     }, isModal && renderContent()), !isModal && renderContent()];
-    return /*#__PURE__*/React.createElement(React.Fragment, null, renderTrigger(), isOpen && /*#__PURE__*/ReactDOM.createPortal(content, getRootPopup()));
+    return /*#__PURE__*/React$1.createElement(React$1.Fragment, null, renderTrigger(), isOpen && /*#__PURE__*/ReactDOM.createPortal(content, getRootPopup()));
   });
 
   var css_248z = "/* @import url(\"primeicons.css\"); */\r\n\r\n* {\r\n  box-sizing: border-box;\r\n}\r\n\r\nhtml,\r\nbody,\r\n#root {\r\n  width: 100%;\r\n  height: 100%;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\ndiv.vertical_canvas {\r\n  width: 50%;\r\n  height: 80%;\r\n  margin: 0;\r\n  padding: 0;\r\n  float: left;\r\n}\r\ndiv.vertical_settings {\r\n  width: 50%;\r\n  height: 20%;\r\n  margin: 0;\r\n  padding: 0;\r\n  float: right;\r\n}\r\n\r\ndiv.vertical_canvas > div > div > canvas {\r\n  width: 100vw;\r\n  height: 100vh;\r\n  \r\n}\r\n\r\ndiv.horizontal_canvas {\r\n  width: 100%;\r\n  height: 60%;\r\n  margin: -10px;\r\n  padding: 0;\r\n  /* display: none; */\r\n}\r\ndiv.horizontal_settings {\r\n  width: 100%;\r\n  height: 40%;\r\n  margin: 0;\r\n  padding-top: 1;\r\n  overflow-y: scroll;\r\n  background-color: white;\r\n}\r\n\r\n\r\n\r\ndiv.horizontal_canvas_full {\r\n  width: 100%;\r\n  height: 100%;\r\n  margin: 0;\r\n  padding: 0;\r\n  /* display: none; */\r\n}\r\ndiv.horizontal_settings_none {\r\n  width: 100%;\r\n  height: 0%;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow-y: scroll;\r\n  background-color: #eef5f0;\r\n}\r\n\r\ndiv.horizontal_canvas > div > div > canvas {\r\n  width: 100vw;\r\n  height: 50vh;\r\n}\r\n\r\n\r\n.react-tabs {\r\n  -webkit-tap-highlight-color: transparent;\r\n}\r\n\r\n.react-tabs__tab-list {\r\n  /* border-bottom: 1px solid #aaa; */\r\n  margin: 0 0 30px;\r\n  padding: 0;\r\n}\r\n\r\n.react-tabs__tab {\r\n  display: inline-block;\r\n  border: 1px solid transparent;\r\n  border-bottom: none;\r\n  bottom: -1px;\r\n  position: relative;\r\n  list-style: none;\r\n  padding: 6px 12px;\r\n  cursor: pointer;\r\n}\r\n\r\n.react-tabs__tab--selected {\r\n  /* background: #fff; */\r\n  /* border-color: #aaa; */\r\n  color: black;\r\n  border-radius: 5px 5px 0 0;\r\n}\r\n\r\n.react-tabs__tab--disabled {\r\n  color: GrayText;\r\n  cursor: default;\r\n}\r\n\r\n.react-tabs__tab:focus {\r\n  outline: none;\r\n}\r\n\r\n.react-tabs__tab:focus:after {\r\n  content: '';\r\n  position: absolute;\r\n  height: 5px;\r\n  left: -4px;\r\n  right: -4px;\r\n  bottom: -5px;\r\n  /* background: #fff; */\r\n}\r\n\r\n.react-tabs__tab-panel {\r\n  display: none;\r\n}\r\n\r\n.react-tabs__tab-panel--selected {\r\n  display: block;\r\n}\r\n\r\n.hide {\r\n  display: none;\r\n}\r\n\r\n\r\n.show {\r\n  display: block;\r\n}\r\n\r\n.first {\r\n  /* border-top: solid 1px lightgray; */\r\n  margin-top: 5px;\r\n}\r\n\r\n.flex {\r\n  flex-direction: row !important;\r\n}\r\n\r\n#content {\r\n  height: 100vh;\r\n}\r\n\r\n\r\n.confirm {\r\n  left: 75vw;\r\n  top: 10vh;\r\n  z-index: 10;\r\n  position: absolute;\r\n  background-color: white !important;\r\n  color: black !important;\r\n  border-color: black !important;\r\n  border: 3px solid rgb(59, 58, 58);\r\n  justify-content: center;\r\n}\r\n\r\n.close {\r\n  left: 5vw;\r\n  top: 10vh;\r\n  z-index: 10;    \r\n  position: absolute;\r\n  background-color: white !important;\r\n  color: black !important;\r\n  border-color: black !important;\r\n  border: 3px solid rgb(59, 58, 58);\r\n  justify-content: center;\r\n}\r\n\r\n.menuToggle_on {\r\n  left: 0vw;\r\n  top: 60vh;\r\n  z-index: 10;  \r\n  position: absolute !important;\r\n  background-image: url(\"./assets/icons/arrow_down_essential_set_icon.png\");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: auto;\r\n  height: 4rem;\r\n  width: 4rem;\r\n\r\n}\r\n\r\n.menuToggle_off {\r\n  left: 0vw;\r\n  top: 94vh;\r\n  z-index: 10;  \r\n  position: absolute !important;;\r\n  background-image: url(\"./assets/icons/arrow_essential_set_up_icon.png\");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: auto;\r\n  height: 4rem;\r\n  width: 4rem;\r\n\r\n}\r\n\r\n.p-button-rounded {\r\n  border-radius: 2rem !important;\r\n}\r\n\r\n.p-button-icon-only  {\r\n  border-radius: 50%;\r\n}\r\n\r\n.pi {\r\n  font-size: 1.4rem;\r\n}\r\n\r\n.pi-sign-out {\r\n  background-image: url(\"./assets/icons/sign_out.png\");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: auto;\r\n  height: 4rem;\r\n  width: 4rem;\r\n}\r\n\r\n.pi-download {\r\n  background-image: url(\"./assets/icons/download.png\");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: auto;\r\n  height: 4rem;\r\n  width: 4rem;\r\n}\r\n\r\n.p-button-component {\r\n  /*width: 250px;*/\r\n  min-width: 200px;\r\n}\r\n\r\n.p-button {\r\n  color: #27272b;\r\n  background-color: white;\r\n  border: 1px solid rgb(59, 58, 58);\r\n\r\n}\r\n\r\n.colorLabel {\r\n  padding-top: 5px;\r\n  font-size: 0.8rem;\r\n}\r\n\r\n.divColorSpacer {\r\n  /* padding-left: 30px; */\r\n  width: 80px;\r\n}\r\n\r\n.p-button, \r\n.p-component {\r\n  font-size: 1.0rem;\r\n}\r\n\r\n.p-button {\r\n  padding: 0.3rem 1rem;\r\n}\r\n\r\n.p-button.p-button-outlined {\r\n  border: 3px solid;\r\n  justify-content: center;\r\n  border-color: black ;\r\n  color: black !important;\r\n}\r\n\r\n.p-toast-message-general {\r\n  background: #d4d6d5;\r\n  border: solid #2c2e2d;\r\n  border-width: 0 0 0 6px;\r\n  color: #2c2e2d;\r\n}\r\n\r\n.p-toast .p-toast-message.p-toast-message-general .p-toast-message-icon, .p-toast .p-toast-message.p-toast-message-general .p-toast-icon-close {\r\n  color: #2c2e2d;\r\n}\r\n\r\n.delimiter {\r\n  padding-top: 10px;\r\n  padding-bottom: 5px;\r\n  /* border-bottom: solid 1px lightgray; */\r\n\r\n}\r\n\r\nbody {\r\n  background: #f0f0f0;\r\n}\r\n\r\n.orderDetail {\r\n  display: flex;\r\n  width: 90%;\r\n}\r\n\r\n.columnOrderDetail {\r\n  flex: 1;\r\n  /*padding: 20px;*/\r\n  border: 0px solid #ddd; /* Optional: Add borders for visual separation */\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  font-size: 20px;\r\n}\r\n\r\n.columnOrderDetailRigth {\r\n  flex: 1;\r\n  padding: 20px;\r\n  border: 0px solid #ddd; /* Optional: Add borders for visual separation */\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  font-size: 20px;\r\n}\r\n\r\n.disable-button{ \r\n  background-color: grey !important;\r\n}\r\n\r\n.selected-border{\r\n  border-color: blue !important;\r\n}\r\n\r\n.buttonFirst {\r\n  margin-left: 60px;\r\n}\r\n\r\n.options-bar {\r\n  width: 600px;\r\n  display: flex; /* Use Flexbox for horizontal alignment */\r\n  justify-content: space-around; /* Distribute space evenly */\r\n  padding: 10px; /* Optional padding */\r\n  background-color: #f0f0f0; /* Optional background color */\r\n  border: 1px solid black; /* Optional border */\r\n}\r\n.deposit-tag {\r\n  width: 200px;\r\n  font-weight: bold;\r\n  font-size: 20px;\r\n}\r\n.option-button {\r\n  /*background-color: #007bff; /* Button background color */\r\n  color: black; /* Button text color */\r\n  border: none; /* Remove default border */\r\n  padding: 10px 50px; /* Button padding */\r\n  margin: 0 2px; /* Spacing between buttons */\r\n  border-radius: 4px; /* Optional rounded corners */\r\n  cursor: pointer; /* Pointer cursor on hover */\r\n  font-size: 20px; /* Font size */\r\n}\r\n.option-button.selected {\r\n  background-color: #050506; /* Blue background for selected button */\r\n  color: #fff; /* White text for selected button */\r\n  border-color: #007bff; /* Match border color with background */\r\n}\r\n/* \r\n.option-button:hover {\r\n  background-color: #0056b3; \r\n} */\r\n\r\n.contact-app {\r\n  text-align: center;\r\n  margin: 50px;\r\n}\r\n\r\n.button:hover {\r\n  background-color: white; \r\n  border: 3px solid;\r\n}\r\n\r\n.contact-view-contact-button {\r\n  /*padding: 10px 20px;*/\r\n  font-size: 20px;\r\n  cursor: pointer;\r\n}\r\n\r\n.contact-popup {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  z-index: 1000;\r\n}\r\n\r\n.contact-popup-content {\r\n  background: #fff;\r\n  padding: 20px;\r\n  border-radius: 8px;\r\n  position: relative;\r\n  width: 600px;\r\n  max-width: 90%;\r\n}\r\n\r\n.contact-close-button {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n  color: #aaa;\r\n}\r\n\r\n.contact-close-button:hover {\r\n  color: #000;\r\n}\r\n\r\n.options-contact {\r\n  width: 600px; \r\n}\r\n\r\n.commonBarDetail {\r\n  display: flex;\r\n  width: 100%;\r\n}\r\n\r\n.oval-button {\r\n  padding: 10px 30px;\r\n  font-size: 16px;\r\n  cursor: pointer;\r\n  border: 1px solid none; /* Border color */\r\n  background-color: #fff; /* Default background color */\r\n  border-radius: 50px; /* Makes the button oval */\r\n  transition: background-color 0.3s ease, color 0.3s ease;\r\n  outline: none; /* Removes default focus outline */\r\n}\r\n\r\n/* #swatch color for selected  */\r\n.dropdown {\r\n  /*align-items: right;\r\n  display: inline-flex;*/\r\n  position:relative;\r\n  display:inline-block;\r\n  height:fit-content;\r\n}\r\n\r\n.dropdown-header {\r\n  display: inline-block;\r\n  align-items: center;\r\n  cursor: pointer;\r\n  background-color: #f0f0f0;\r\n  border: 1px solid #ccc;\r\n  padding: 10px 20px; /* Adjust padding for the oval shape */\r\n  border-radius: 50px; /* Creates the oval shape */\r\n  font-size: 16px;\r\n  white-space: nowrap; /* Prevent text from wrapping */\r\n  width: 170px; /* Fixed width for consistency */\r\n  text-align: center; /* Center text within the header */\r\n  box-sizing: border-box; /* Include padding and border in width calculation */\r\n}\r\n\r\n.bi-chevron-down {\r\n  margin-left: 10px;\r\n}\r\n\r\n.dropdown-menu {\r\n  position:absolute;\r\n  top: 100%;\r\n  left: 0;\r\n  margin-top:1px;\r\n  background-color: #fff;\r\n  border: 1px solid #ccc;\r\n  border-radius: 50px; /* Match the oval shape of the header */\r\n  display: flex;\r\n  flex-direction: row; /* Display items horizontally */\r\n  padding: 5px;\r\n  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);\r\n  z-index: 1000; /* Ensure the menu appears above other content */\r\n  justify-content: space-around;\r\n  box-sizing: border-box; /* Include padding and border in width calculation */\r\n}\r\n\r\n.dropdown-item {\r\n  background-color: transparent;\r\n  border: none;\r\n  color: #000; /* Change text color for visibility */\r\n  padding: 10px 15px; /* Adjust padding for item spacing */\r\n  margin: 0 5px; /* Space between items */\r\n  border-radius: 20px; /* Rounded corners for each item */\r\n  cursor: pointer;\r\n  font-size: 16px;\r\n  text-align: center; /* Center text */\r\n  padding: 10px 15px;\r\n  display: block;\r\n  text-decoration: none;\r\n  width: 100px;\r\n}\r\n\r\n.dropdown-item:hover {\r\n  background-color: #e0e0e0; /* Change background on hover for better visibility */\r\n}\r\n\r\n.optionslevel3 {\r\n  display: inline-flex; /* Align children in a row */\r\n  gap: 20px; \r\n  /*align-items: baseline;*/\r\n}\r\n\r\n\t\t\t\t\t\t\t\t\r\n.show_dropdown {\r\n  position:relative;\r\n  display:inline-block;\r\n  height:fit-content;\r\n}\r\n\r\n.hide_dropdown {\r\n  position:relative;\r\n  display:none;\r\n  height:fit-content;\r\n}\r\n\r\n\r\n.clearall {\r\n  left: 5vw;\r\n  top: 53vh;\r\n  z-index: 10;    \r\n  position: absolute;\r\n  background-color: white !important;\r\n  color: black !important;\r\n  border-color: black !important;\r\n  border: 3px solid rgb(59, 58, 58);\r\n  justify-content: center; \r\n\r\n}\r\n\r\n\r\n.flexPaveColumn{\r\n  flex: 1;\r\n  /*padding: 20px;*/\r\n  border: 0px solid #ddd; /* Optional: Add borders for visual separation */\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  font-size: 15px;\r\n}\r\n\r\n/*end */\r\n";
@@ -810,7 +810,7 @@
   var ReactSharedInternals = React__namespace.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
   var ReactCurrentDispatcher = ReactSharedInternals.ReactCurrentDispatcher;
   var useForceUpdate = function useForceUpdate() {
-    return React.useReducer(function () {
+    return React$1.useReducer(function () {
       return {};
     })[1];
   };
@@ -1071,7 +1071,7 @@
     var forceUpdate = useForceUpdate();
     var inst = getInstance(hook);
     inst.sub(forceUpdate);
-    React.useEffect(function () {
+    React$1.useEffect(function () {
       return inst.sub(forceUpdate), function () {
         return inst.unsub(forceUpdate);
       };
@@ -1079,23 +1079,23 @@
     return inst.get();
   };
 
-  var ListContext = /*#__PURE__*/React.createContext();
+  var ListContext = /*#__PURE__*/React$1.createContext();
   var ListProvider = function ListProvider(_ref) {
     var children = _ref.children;
-    var _useState = React.useState([]),
+    var _useState = React$1.useState([]),
       _useState2 = _slicedToArray(_useState, 2),
       globalList = _useState2[0],
       setGlobalList = _useState2[1];
-    var _useState3 = React.useState('disabled'),
+    var _useState3 = React$1.useState('disabled'),
       _useState4 = _slicedToArray(_useState3, 2),
       isButtonEnabled = _useState4[0],
       setIsButtonEnabled = _useState4[1];
     //image front,back
-    var _useState5 = React.useState(null),
+    var _useState5 = React$1.useState(null),
       _useState6 = _slicedToArray(_useState5, 2),
       capturedImageSrc = _useState6[0],
       setCapturedImageSrc = _useState6[1];
-    var _useState7 = React.useState(null),
+    var _useState7 = React$1.useState(null),
       _useState8 = _slicedToArray(_useState7, 2),
       capturedBehindImageSrc = _useState8[0],
       setCapturedBehindImageSrc = _useState8[1];
@@ -1150,7 +1150,7 @@
       setGlobalList([]);
       //setMaterials([]);
     };
-    return /*#__PURE__*/React.createElement(ListContext.Provider, {
+    return /*#__PURE__*/React$1.createElement(ListContext.Provider, {
       value: {
         capturedImageSrc: capturedImageSrc,
         capturedBehindImageSrc: capturedBehindImageSrc,
@@ -1167,31 +1167,31 @@
     }, children);
   };
   var useList = function useList() {
-    return React.useContext(ListContext);
+    return React$1.useContext(ListContext);
   };
 
   var useShareable = function useShareable() {
-    var _useState = React.useState({}),
+    var _useState = React$1.useState({}),
       _useState2 = _slicedToArray(_useState, 2),
       visibleMeshes = _useState2[0],
       setVisibleMeshes = _useState2[1];
-    var _useState3 = React.useState({}),
+    var _useState3 = React$1.useState({}),
       _useState4 = _slicedToArray(_useState3, 2),
       visibleMeshesColor = _useState4[0],
       setVisibleMeshesColor = _useState4[1];
-    var _useState5 = React.useState("none"),
+    var _useState5 = React$1.useState("none"),
       _useState6 = _slicedToArray(_useState5, 2),
       teethId = _useState6[0],
       setTeethId = _useState6[1];
-    var _useState7 = React.useState("none"),
+    var _useState7 = React$1.useState("none"),
       _useState8 = _slicedToArray(_useState7, 2),
       capId = _useState8[0],
       setCapId = _useState8[1];
-    var _useState9 = React.useState(),
+    var _useState9 = React$1.useState(),
       _useState0 = _slicedToArray(_useState9, 2),
       scene3D = _useState0[0],
       setScene3D = _useState0[1];
-    var _useState1 = React.useState(),
+    var _useState1 = React$1.useState(),
       _useState10 = _slicedToArray(_useState1, 2),
       texture = _useState10[0],
       setTexture = _useState10[1];
@@ -3079,8 +3079,8 @@
       maxLevel = _ref.maxLevel,
       cssClass = _ref.cssClass,
       toast = _ref.toast;
-    var ref = React.useRef();
-    React.useRef("none");
+    var ref = React$1.useRef();
+    React$1.useRef("none");
     var _useShareableState = useShareableState();
       _useShareableState.scene3D;
       _useShareableState.texture;
@@ -3105,7 +3105,7 @@
         }
       });
     };
-    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React$1.createElement(React$1.Fragment, null, /*#__PURE__*/React$1.createElement("div", {
       ref: ref,
       key: Date.now().toString(36) + Math.random().toString(36).substring(2) + level,
       className: (cssClass ? cssClass : "") + " delimiter card flex flex-wrap justify-content-center gap-3"
@@ -3121,9 +3121,9 @@
         });
       }
       if (key == level) {
-        return /*#__PURE__*/React.createElement(React.Fragment, null, listItem && listItem.length > 0 && listItem.map(function (itemParent, index) {
+        return /*#__PURE__*/React$1.createElement(React$1.Fragment, null, listItem && listItem.length > 0 && listItem.map(function (itemParent, index) {
           // console.log(itemParent.name);
-          return /*#__PURE__*/React.createElement("div", {
+          return /*#__PURE__*/React$1.createElement("div", {
             className: (level == 1 ? "show" : "hide") + (level == "colorOption" ? " divColorSpacer " : ""),
             target: itemParent.target,
             layer: itemParent.level,
@@ -3132,7 +3132,7 @@
             name: itemParent.name,
             key: "div_" + index,
             all_level: maxLevel
-          }, /*#__PURE__*/React.createElement(button.Button, {
+          }, /*#__PURE__*/React$1.createElement(button.Button, {
             type: "button",
             onClick: function onClick(event) {
               var _itemParent$component;
@@ -3334,7 +3334,7 @@
             outlined: level == "colorOption" ? "" : "outlined",
             icon: level == "colorOption" ? "pi" : "",
             "aria-label": itemParent.name
-          }, level == "colorOption" ? "" : itemParent.displayName), level == "colorOption" && /*#__PURE__*/React.createElement("span", {
+          }, level == "colorOption" ? "" : itemParent.displayName), level == "colorOption" && /*#__PURE__*/React$1.createElement("span", {
             className: (level == 1 ? "show" : "hide") + " colorLabel ",
             target: itemParent.target,
             layer: itemParent.level,
@@ -3343,7 +3343,7 @@
             name: itemParent.name,
             key: "span_" + itemParent.id,
             all_level: maxLevel
-          }, itemParent.name), level == 1 && globalParentHierachyId(itemParent.name, itemParent.id, itemParent.level, itemParent.parentId), /*#__PURE__*/React.createElement("input", {
+          }, itemParent.name), level == 1 && globalParentHierachyId(itemParent.name, itemParent.id, itemParent.level, itemParent.parentId), /*#__PURE__*/React$1.createElement("input", {
             type: "file",
             id: "uploadInput",
             style: {
@@ -4056,7 +4056,7 @@
       visibleMeshes = _useShareableState.visibleMeshes;
       _useShareableState.setVisibleMeshes;
       var visibleMeshesColor = _useShareableState.visibleMeshesColor;
-    var _useState = React.useState(0),
+    var _useState = React$1.useState(0),
       _useState2 = _slicedToArray(_useState, 2);
       _useState2[0];
       _useState2[1];
@@ -4126,7 +4126,7 @@
     //     }, [teethId])
     // console.log(nodes);
     var uuid = Date.now().toString(36) + Math.random().toString(36).substring(6);
-    return /*#__PURE__*/React.createElement("group", _extends$1({
+    return /*#__PURE__*/React$1.createElement("group", _extends$1({
       key: uuid
     }, props, {
       dispose: null
@@ -4185,7 +4185,7 @@
                 material = materialSelected;
               }
             }
-            return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("mesh", {
+            return /*#__PURE__*/React$1.createElement(React$1.Fragment, null, /*#__PURE__*/React$1.createElement("mesh", {
               name: "mesh_" + nodes[key].name,
               visible: meshVisible
               // material={diamondMaterial}
@@ -4262,7 +4262,7 @@
               rotation: nodes[key].rotation,
               scale: nodes[key].scale,
               material: material
-            }, meshDetails[0].componentType == 'Diamond' && map && /*#__PURE__*/React.createElement(drei.MeshRefractionMaterial, {
+            }, meshDetails[0].componentType == 'Diamond' && map && /*#__PURE__*/React$1.createElement(drei.MeshRefractionMaterial, {
               envMap: map,
               toneMapped: false,
               emissiveIntensity: 10
@@ -4278,7 +4278,7 @@
               fresnel: 1
               /** If this is on it uses fewer ray casts for the RGB shift sacrificing physical accuracy, true */,
               fastChroma: true
-            })), window.isAnimating && /*#__PURE__*/React.createElement(drei.Html, {
+            })), window.isAnimating && /*#__PURE__*/React$1.createElement(drei.Html, {
               center: true
             }, "Loading..."));
           }
@@ -4298,7 +4298,7 @@
     // return false                                     // will re-render
     return true;
   };
-  var Teeth$1 = /*#__PURE__*/React.memo(Teeth, areEqual);
+  var Teeth$1 = /*#__PURE__*/React$1.memo(Teeth, areEqual);
 
   var model_options = {};
   var mesh_options = {};
@@ -4359,7 +4359,7 @@
   function Loader() {
     var _useProgress = drei.useProgress(),
       progress = _useProgress.progress;
-    return /*#__PURE__*/React.createElement(drei.Html, {
+    return /*#__PURE__*/React$1.createElement(drei.Html, {
       center: true
     }, progress, " % loaded");
   }
@@ -4376,7 +4376,7 @@
     window.glCamera = camera;
     return "<></>";
   }
-  var App = /*#__PURE__*/React.memo(function App(_ref) {
+  var App = /*#__PURE__*/React$1.memo(function App(_ref) {
     _ref.product_handle;
       var data_model_parameter = _ref.data_model_parameter,
       data_json_parameter = _ref.data_json_parameter,
@@ -4392,23 +4392,23 @@
     textureDiamond.mapping = THREE__namespace.EquirectangularReflectionMapping;
     var _useGLTF = drei.useGLTF(data_model_parameter),
       nodes = _useGLTF.nodes;
-    var ref = React.useRef();
-    React.useRef(postprocessing.EffectComposer);
-    var toast = React.useRef(null);
+    var ref = React$1.useRef();
+    React$1.useRef(postprocessing.EffectComposer);
+    var toast = React$1.useRef(null);
     // const layout = "vertical"; // "horizontal"
     var layout = "horizontal"; // "horizontal"
     var log = "";
-    var _useState = React.useState([]),
+    var _useState = React$1.useState([]),
       _useState2 = _slicedToArray(_useState, 2),
       jsonData = _useState2[0],
       setJsonData = _useState2[1];
     // const [isConfigExpanded, setIsConfigExpanded ] = useState(true);
     var loaded = false;
-    var _useState3 = React.useState(false),
+    var _useState3 = React$1.useState(false),
       _useState4 = _slicedToArray(_useState3, 2);
       _useState4[0];
       _useState4[1];
-    React.useRef();
+    React$1.useRef();
 
     // const CaptureComponent = React.forwardRef((props, ref) => {
     //   const { gl, scene, camera } = useThree();
@@ -4529,7 +4529,7 @@
       event.preventDefault();
       event.stopPropagation();
     };
-    React.useEffect(function () {
+    React$1.useEffect(function () {
       getConfigurationData();
     }, [loaded]);
     var material_classic = new THREE__namespace.MeshPhysicalMaterial({
@@ -4588,20 +4588,20 @@
     // console.log(styles)
 
     if (!jsonData || jsonData && jsonData.length == 0) {
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React$1.createElement("div", {
         id: "content"
       }, "Loading...");
     } else {
       var _nodes$GEJ_Logo;
       console.log("loaded ...");
-      return /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React$1.createElement("div", {
         id: "content",
         style: {
           margin: "-10px"
         }
-      }, /*#__PURE__*/React.createElement("style", {
+      }, /*#__PURE__*/React$1.createElement("style", {
         jsx: "true"
-      }, styles), /*#__PURE__*/React.createElement(button.Button, {
+      }, styles), /*#__PURE__*/React$1.createElement(button.Button, {
         type: "button",
         id: "popup1-clearAll",
         rounded: true,
@@ -4610,24 +4610,24 @@
         onClick: function onClick(event) {
           clearAll();
         }
-      }, "Clear All"), /*#__PURE__*/React.createElement(button.Button, {
+      }, "Clear All"), /*#__PURE__*/React$1.createElement(button.Button, {
         type: "button",
         id: "btnCollapseExpandMenu",
         rounded: true,
         icon: "pi",
         className: "menuToggle" + (window.isConfigExpanded ? "_on" : "_off"),
         onClick: toggleMenuOptions
-      }), /*#__PURE__*/React.createElement("input", {
+      }), /*#__PURE__*/React$1.createElement("input", {
         type: "hidden",
         id: "variantTeethId"
-      }), /*#__PURE__*/React.createElement(toast$1.Toast, {
+      }), /*#__PURE__*/React$1.createElement(toast$1.Toast, {
         severity: "success",
         ref: toast,
         position: "center"
-      }), /*#__PURE__*/React.createElement(confirmdialog.ConfirmDialog, null), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React$1.createElement(confirmdialog.ConfirmDialog, null), /*#__PURE__*/React$1.createElement("div", {
         id: "canvas",
         className: layout + "_canvas" + (window.isConfigExpanded ? "" : "_full")
-      }, /*#__PURE__*/React.createElement(fiber.Canvas, {
+      }, /*#__PURE__*/React$1.createElement(fiber.Canvas, {
         shadows: true
         // camera={{ position: [0, 0, 15], fov: 35, near: 1, far: 30 }}
         ,
@@ -4647,33 +4647,33 @@
           far: 30,
           zoom: 0.8
         }
-      }, /*#__PURE__*/React.createElement(React.Suspense, {
-        fallback: /*#__PURE__*/React.createElement(Loader, null)
-      }, /*#__PURE__*/React.createElement("color", {
+      }, /*#__PURE__*/React$1.createElement(React$1.Suspense, {
+        fallback: /*#__PURE__*/React$1.createElement(Loader, null)
+      }, /*#__PURE__*/React$1.createElement("color", {
         attach: "background",
         args: ["#f0f0f0"]
-      }), /*#__PURE__*/React.createElement(drei.OrbitControls, {
+      }), /*#__PURE__*/React$1.createElement(drei.OrbitControls, {
         makeDefault: true
-      }), /*#__PURE__*/React.createElement(drei.Stage, {
+      }), /*#__PURE__*/React$1.createElement(drei.Stage, {
         controls: ref,
         preset: "upfront",
         intensity: 1.2,
         environment: "warehouse"
-      }, /*#__PURE__*/React.createElement(drei.Center, null, /*#__PURE__*/React.createElement(Configuration, null), /*#__PURE__*/React.createElement(Teeth$1, {
+      }, /*#__PURE__*/React$1.createElement(drei.Center, null, /*#__PURE__*/React$1.createElement(Configuration, null), /*#__PURE__*/React$1.createElement(Teeth$1, {
         nodes: nodes,
         toast: toast,
         jsonData: jsonData,
         maxHierarchyDepth: maxHierarchyDepth,
         map: textureDiamond,
         scale: 10
-      }), /*#__PURE__*/React.createElement("mesh", {
+      }), /*#__PURE__*/React$1.createElement("mesh", {
         rotation: [Math.PI / 2, 0, 0],
         geometry: (_nodes$GEJ_Logo = nodes['GEJ_Logo']) === null || _nodes$GEJ_Logo === void 0 ? void 0 : _nodes$GEJ_Logo.geometry,
         material: material_classic
-      })))))), /*#__PURE__*/React.createElement("div", {
+      })))))), /*#__PURE__*/React$1.createElement("div", {
         id: "settings",
         className: layout + "_settings"
-      }, /*#__PURE__*/React.createElement("center", null, /*#__PURE__*/React.createElement(Options01, {
+      }, /*#__PURE__*/React$1.createElement("center", null, /*#__PURE__*/React$1.createElement(Options01, {
         hierachyList: model_options,
         level: 1,
         log: log,
@@ -4682,7 +4682,7 @@
         maxLevel: maxHierarchyDepth,
         cssClass: "first",
         toast: toast
-      }), /*#__PURE__*/React.createElement(Options01, {
+      }), /*#__PURE__*/React$1.createElement(Options01, {
         hierachyList: model_options,
         level: 2,
         log: log,
@@ -4690,7 +4690,7 @@
         parent: "",
         maxLevel: maxHierarchyDepth,
         toast: toast
-      }), /*#__PURE__*/React.createElement(Options01, {
+      }), /*#__PURE__*/React$1.createElement(Options01, {
         hierachyList: model_options,
         level: 3,
         log: log,
@@ -4698,7 +4698,7 @@
         parent: "",
         maxLevel: maxHierarchyDepth,
         toast: toast
-      }), /*#__PURE__*/React.createElement(Options01, {
+      }), /*#__PURE__*/React$1.createElement(Options01, {
         hierachyList: mesh_options,
         level: "mesh",
         log: log,
@@ -4706,9 +4706,9 @@
         parent: "",
         maxLevel: maxHierarchyDepth,
         toast: toast
-      }), /*#__PURE__*/React.createElement("div", {
+      }), /*#__PURE__*/React$1.createElement("div", {
         id: "classicOptions"
-      }, /*#__PURE__*/React.createElement(Options01, {
+      }, /*#__PURE__*/React$1.createElement(Options01, {
         hierachyList: color_options,
         level: "colorOption",
         log: log,
@@ -4716,16 +4716,16 @@
         parent: "",
         maxLevel: maxHierarchyDepth,
         toast: toast
-      })), /*#__PURE__*/React.createElement("div", {
+      })), /*#__PURE__*/React$1.createElement("div", {
         id: "paveOptions",
         className: "optionslevel3",
         style: {
           display: "flex",
           width: "80%"
         }
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React$1.createElement("div", {
         className: "flexPaveColumn"
-      }, /*#__PURE__*/React.createElement(Options01, {
+      }, /*#__PURE__*/React$1.createElement(Options01, {
         hierachyList: color_enamel_classic_options,
         level: "colorOption",
         log: log,
@@ -4733,9 +4733,9 @@
         parent: "",
         maxLevel: maxHierarchyDepth,
         toast: toast
-      })), /*#__PURE__*/React.createElement("div", {
+      })), /*#__PURE__*/React$1.createElement("div", {
         className: "flexPaveColumn"
-      }, /*#__PURE__*/React.createElement(Options01, {
+      }, /*#__PURE__*/React$1.createElement(Options01, {
         hierachyList: color_enamel_pave_options,
         level: "colorOption",
         log: log,
@@ -4743,7 +4743,7 @@
         parent: "",
         maxLevel: maxHierarchyDepth,
         toast: toast
-      }))), /*#__PURE__*/React.createElement("div", {
+      }))), /*#__PURE__*/React$1.createElement("div", {
         id: "paveOptionTitle",
         className: "hide delimiter card flex flex-wrap justify-content-center gap-3",
         style: {
@@ -4753,20 +4753,20 @@
           marginBottom: "50px",
           marginTop: "5px"
         }
-      }, /*#__PURE__*/React.createElement("div", {
+      }, /*#__PURE__*/React$1.createElement("div", {
         className: "flexPaveColumn"
-      }, /*#__PURE__*/React.createElement("span", {
+      }, /*#__PURE__*/React$1.createElement("span", {
         id: "paveOptionLeftTitle"
-      })), /*#__PURE__*/React.createElement("div", {
+      })), /*#__PURE__*/React$1.createElement("div", {
         className: "flexPaveColumn"
-      }, /*#__PURE__*/React.createElement("span", {
+      }, /*#__PURE__*/React$1.createElement("span", {
         id: "paveOptionRightTitle"
       }))))));
     }
   });
 
   var ContactInfo = function ContactInfo() {
-    var _useState = React.useState(false),
+    var _useState = React$1.useState(false),
       _useState2 = _slicedToArray(_useState, 2),
       isPopupVisible = _useState2[0],
       setIsPopupVisible = _useState2[1];
@@ -4774,11 +4774,11 @@
       capturedImageSrc = _useList.capturedImageSrc,
       capturedBehindImageSrc = _useList.capturedBehindImageSrc;
       _useList.enableButton;
-    var _useState3 = React.useState(false),
+    var _useState3 = React$1.useState(false),
       _useState4 = _slicedToArray(_useState3, 2);
       _useState4[0];
       var setLoading = _useState4[1];
-    var hiddenLink = React.useRef(null);
+    var hiddenLink = React$1.useRef(null);
 
     // Toggle popup visibility
     var togglePopup = function togglePopup() {
@@ -4872,42 +4872,42 @@
         return _ref.apply(this, arguments);
       };
     }();
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React$1.createElement("div", {
       className: "commonBarDetail",
       style: {
         marginBottom: '10px'
       }
-    }, /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React$1.createElement("div", {
       className: "deposit-tag"
-    }, /*#__PURE__*/React.createElement("p", null, "File Upload:")), /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React$1.createElement("p", null, "File Upload:")), /*#__PURE__*/React$1.createElement("div", {
       className: "options-contact"
-    }, /*#__PURE__*/React.createElement("button", {
+    }, /*#__PURE__*/React$1.createElement("button", {
       className: "oval-button",
       onClick: togglePopup
-    }, "CONTACT US"), /*#__PURE__*/React.createElement("a", {
+    }, "CONTACT US"), /*#__PURE__*/React$1.createElement("a", {
       href: "#",
       ref: hiddenLink,
       style: {
         display: 'none'
       }
-    }), /*#__PURE__*/React.createElement("button", {
+    }), /*#__PURE__*/React$1.createElement("button", {
       className: "oval-button",
       style: {
         "float": 'right'
       },
       onClick: download
-    }, "DOWNLOAD IMAGES")), isPopupVisible && /*#__PURE__*/React.createElement("div", {
+    }, "DOWNLOAD IMAGES")), isPopupVisible && /*#__PURE__*/React$1.createElement("div", {
       className: "contact-popup"
-    }, /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React$1.createElement("div", {
       className: "contact-popup-content"
-    }, /*#__PURE__*/React.createElement("span", {
+    }, /*#__PURE__*/React$1.createElement("span", {
       className: "contact-close-button",
       onClick: togglePopup
-    }, "\xD7"), /*#__PURE__*/React.createElement("h3", {
+    }, "\xD7"), /*#__PURE__*/React$1.createElement("h3", {
       style: {
         textAlign: 'center'
       }
-    }, "Contact Information"), /*#__PURE__*/React.createElement("p", null, "Please send the teeth file (.stl type) to the email address below"), /*#__PURE__*/React.createElement("p", null, "Email: react-integration-51121@myshopify.com"), /*#__PURE__*/React.createElement("p", null, "Phone: (+123) 456-7890"), /*#__PURE__*/React.createElement("p", null, "Address: 123 Address of Street, CA, USA"))));
+    }, "Contact Information"), /*#__PURE__*/React$1.createElement("p", null, "Please send the teeth file (.stl type) to the email address below"), /*#__PURE__*/React$1.createElement("p", null, "Email: react-integration-51121@myshopify.com"), /*#__PURE__*/React$1.createElement("p", null, "Phone: (+123) 456-7890"), /*#__PURE__*/React$1.createElement("p", null, "Address: 123 Address of Street, CA, USA"))));
   };
 
   var data_model_parameter = document.getElementById('customize-product-popup').getAttribute("data_model_parameter");
@@ -4930,13 +4930,13 @@
     //   console.log('App Bridge initialized:', app);
     // }, []);
 
-    var primeToastRef = React.useRef(null);
-    var primeToastSecondRef = React.useRef(null);
-    var cartToastRef = React.useRef(null);
-    React.useRef(null);
-    React.useState(null); //useRef(null);
-    React.useRef();
-    var _useState = React.useState(null),
+    var primeToastRef = React$1.useRef(null);
+    var primeToastSecondRef = React$1.useRef(null);
+    var cartToastRef = React$1.useRef(null);
+    React$1.useRef(null);
+    React$1.useState(null); //useRef(null);
+    React$1.useRef();
+    var _useState = React$1.useState(null),
       _useState2 = _slicedToArray(_useState, 2);
       _useState2[0];
       _useState2[1];
@@ -4980,11 +4980,11 @@
     //   }
     //   return quantity;
     // };
-    var _useState3 = React.useState(null),
+    var _useState3 = React$1.useState(null),
       _useState4 = _slicedToArray(_useState3, 2),
       capturedImageSrc = _useState4[0],
       setCapturedImageSrc = _useState4[1];
-    var _useState5 = React.useState(null),
+    var _useState5 = React$1.useState(null),
       _useState6 = _slicedToArray(_useState5, 2);
       _useState6[0];
       _useState6[1];
@@ -4995,11 +4995,11 @@
         detail: msg
       });
     };
-    var _useState7 = React.useState(false),
+    var _useState7 = React$1.useState(false),
       _useState8 = _slicedToArray(_useState7, 2),
       isFirstPopupOpen = _useState8[0],
       setFirstPopupOpen = _useState8[1];
-    var _useState9 = React.useState(false),
+    var _useState9 = React$1.useState(false),
       _useState0 = _slicedToArray(_useState9, 2),
       isSecondPopupOpen = _useState0[0],
       setSecondPopupOpen = _useState0[1];
@@ -5009,11 +5009,11 @@
       // Open the first popup when the "Buy" button is clicked
       setFirstPopupOpen(true);
     };
-    React.useRef();
+    React$1.useRef();
     new THREE__namespace.WebGLRenderer({
       preserveDrawingBuffer: true
     });
-    var _useState1 = React.useState(null),
+    var _useState1 = React$1.useState(null),
       _useState10 = _slicedToArray(_useState1, 2);
       _useState10[0];
       _useState10[1];
@@ -5387,7 +5387,7 @@
       document.getElementById("paveOptionLeftTitle").innerHTML = '';
       document.getElementById("paveOptionRightTitle").innerHTML = '';
     }
-    var _useState11 = React.useState([]),
+    var _useState11 = React$1.useState([]),
       _useState12 = _slicedToArray(_useState11, 2);
       _useState12[0];
       _useState12[1];
@@ -5485,7 +5485,7 @@
           handleCloseAllPopup();
           close();
         }
-      }, "Back"), /*#__PURE__*/React.createElement(React.Suspense, {
+      }, "Back"), /*#__PURE__*/React.createElement(React$1.Suspense, {
         fallback: /*#__PURE__*/React.createElement("center", null, /*#__PURE__*/React.createElement("div", null, "Loading, please wait... "))
       }, /*#__PURE__*/React.createElement(App, {
         product_handle: product_handle,

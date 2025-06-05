@@ -1,4 +1,4 @@
-var MyShopifyApp = (function (THREE, drei, React, fiber) {
+var Teeth = (function (THREE, drei, React, fiber) {
   'use strict';
 
   function _interopNamespaceDefault(e) {

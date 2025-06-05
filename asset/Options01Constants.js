@@ -1,4 +1,4 @@
-var MyShopifyApp = (function (exports) {
+var Options01Constants = (function (exports) {
     'use strict';
 
     var teethImageMaskArr = [{

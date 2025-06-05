@@ -1,4 +1,4 @@
-var MyShopifyApp = (function (exports, THREE) {
+var Options01Helpers = (function (exports, THREE) {
     'use strict';
 
     function _interopNamespaceDefault(e) {

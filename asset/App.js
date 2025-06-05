@@ -1,4 +1,4 @@
-var MyShopifyApp = (function (THREE$1, fiber, drei, threeStdlib, React, toast$1, button, confirmdialog, postprocessing) {
+var App = (function (THREE$1, fiber, drei, threeStdlib, React, toast$1, button, confirmdialog, postprocessing) {
   'use strict';
 
   function _interopNamespaceDefault(e) {

@@ -1,4 +1,4 @@
-var MyShopifyApp = (function (React) {
+var Common = (function (React) {
   'use strict';
 
   function _interopNamespaceDefault(e) {

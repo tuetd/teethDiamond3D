@@ -1,4 +1,4 @@
-var MyShopifyApp = (function (React, ImageResizer, FileSaver) {
+var ContactInfo = (function (React, ImageResizer, FileSaver) {
   'use strict';
 
   function _arrayLikeToArray(r, a) {

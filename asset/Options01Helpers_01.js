@@ -1,4 +1,4 @@
-var MyShopifyApp = (function (exports, react, THREE$1) {
+var Options01Helpers_01 = (function (exports, react, THREE$1) {
     'use strict';
 
     function _interopNamespaceDefault(e) {

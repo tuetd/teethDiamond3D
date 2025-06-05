@@ -1,4 +1,4 @@
-var MyShopifyApp = (function (React, button, confirmdialog, THREE$1) {
+var Options01Main = (function (React, button, confirmdialog, THREE$1) {
   'use strict';
 
   function _interopNamespaceDefault(e) {

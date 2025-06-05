@@ -1,4 +1,4 @@
-var MyShopifyApp = (function (exports, React) {
+var ListContext = (function (exports, React) {
   'use strict';
 
   function _arrayLikeToArray(r, a) {
