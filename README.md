@@ -1,5 +1,44 @@
-TEETH DIAMOND 3D
+# 🦷 TEETH 3D MODEL 1
 
-For support 3D teeth
+The file is used within the Shopify app extension for 3D teeth configuration, built with React, Vite, and Three Fiber!
 
-© 2025 Implement by dev Teams.
+---
+
+## 🚀 Explore the Project
+- **Contributors**: [Tue Tran](https://linkedin.com/in/tuetran87)
+- **Forks**: [Fork this Project](https://github.com/tuetd/teethDiamond3D/fork)
+- **Stargazers**: [Star the Project](https://github.com/tuetd/teethDiamond3D/stargazers)
+- **Issues**: [Report Issues](https://github.com/tuetd/teethDiamond3D/issues)
+- **LinkedIn**: [Tue Tran](https://linkedin.com/in/tuetran87)
+---
+
+## 📖 About The Project
+
+### **🦷🦷🦷🦷🦷**
+
+This project provides business logic for 3D teeth configuration, designed to be displayed on Shopify app extensions.
+
+### **Why This Project?**
+- Focus on business logic that solves interaction with the 3D Teeth Model.
+- Not bundled into the Shopify extension app; it's only an external script.
+- No need to use Shopify app deployment when changing business logic; just update the external file and use GitHub deployment. It is auto-deployment and generates documentation (GitHub Pages).
+---
+
+## 🛠️ Built With
+This file is powered by the following frameworks and libraries:
+- **React**
+- **Vite**
+- **Three Fiber**
+- **Primereact**
+- **ReactJS Popup**
+
+---
+
+## 🛠️ Getting Started
+
+### **Prerequisites**
+Ensure you have the following installed:
+- **Node.js**: Install the latest version from [Node.js](https://nodejs.org/).
+- **npm**: Update npm to the latest version:
+  ```bash
+  npm install npm@latest -g
