@@ -10,6 +10,7 @@ The file is used within the Shopify app extension for 3D teeth configuration, bu
 - **Stargazers**: [Star 3D Teeth](https://github.com/tuetd/teethDiamond3D/stargazers)
 - **Issues**: [Report Issues](https://github.com/tuetd/teethDiamond3D/issues)
 - **LinkedIn**: [Tue Tran](https://linkedin.com/in/tuetran87)
+
 ---
 
 ## 📖 About The Project
