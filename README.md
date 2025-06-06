@@ -1,4 +1,4 @@
-# 🦷 TEETH 3D MODEL 1
+# 🦷 3D TEETH MODEL 1 🦷 
 
 The file is used within the Shopify app extension for 3D teeth configuration, built with React, Vite, and Three Fiber!
 
@@ -6,8 +6,8 @@ The file is used within the Shopify app extension for 3D teeth configuration, bu
 
 ## 🚀 Explore the Project
 - **Contributors**: [Tue Tran](https://linkedin.com/in/tuetran87)
-- **Forks**: [Fork this Project](https://github.com/tuetd/teethDiamond3D/fork)
-- **Stargazers**: [Star the Project](https://github.com/tuetd/teethDiamond3D/stargazers)
+- **Forks**: [Fork 3D Teeth Project](https://github.com/tuetd/teethDiamond3D/fork)
+- **Stargazers**: [Star 3D Teeth](https://github.com/tuetd/teethDiamond3D/stargazers)
 - **Issues**: [Report Issues](https://github.com/tuetd/teethDiamond3D/issues)
 - **LinkedIn**: [Tue Tran](https://linkedin.com/in/tuetran87)
 ---
