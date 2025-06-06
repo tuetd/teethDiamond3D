@@ -22,7 +22,6 @@ This project provides business logic for 3D teeth configuration, designed to be 
 **Why This Project?**
 - Focus on business logic that solves interaction with the 3D Teeth Model.
 - Not bundled into the Shopify extension app; it's only an external script.
-- No need to use Shopify app deployment when changing business logic; just update the external file and use GitHub deployment. It is auto-deployment and generates documentation (GitHub Pages).
 ---
 
 ## 🛠️ Built With
