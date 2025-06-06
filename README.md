@@ -15,7 +15,7 @@ The file is used within the Shopify app extension for 3D teeth configuration, bu
 
 ## 📖 About The Project
 
-### **🦷🦷🦷🦷🦷**
+**🦷🦷🦷🦷🦷**
 
 This project provides business logic for 3D teeth configuration, designed to be displayed on Shopify app extensions.
 
