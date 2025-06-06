@@ -1,5 +1,3 @@
-# 🦷 3D TEETH MODEL 1 🦷 
-
 The file is used within the Shopify app extension for 3D teeth configuration, built with React, Vite, and Three Fiber!
 
 ---
