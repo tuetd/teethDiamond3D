@@ -20,8 +20,8 @@ The file is used within the Shopify app extension for 3D teeth configuration, bu
 This project provides business logic for 3D teeth configuration, designed to be displayed on Shopify app extensions.
 
 **Why This Project?**
-- Focus on business logic that solves interaction with the 3D Teeth Model.
-- Not bundled into the Shopify extension app; it's only an external script.
+"- Focus on business logic that solves interaction with the 3D Teeth Model."
+ "- Not bundled into the Shopify extension app; it's only an external script."
 ---
 
 ## 🛠️ Built With
